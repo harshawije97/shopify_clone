@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopify_clone/features/auth/views/pages/signup_page.dart';
+import 'package:shopify_clone/features/auth/views/pages/signin_page.dart';
 import 'package:shopify_clone/resources/themes/themes.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class SpotifyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.darkThemeMode,
-      home: const SignupPage(),
+      home: const SigninPage(),
     );
   }
 }

@@ -3,28 +3,19 @@ import 'package:shopify_clone/features/auth/views/widgets/auth_button.dart';
 import 'package:shopify_clone/features/auth/views/widgets/text_field_input.dart';
 import 'package:shopify_clone/resources/themes/app_color_pallete.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
-  /*
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  */
-
+class SigninPage extends StatefulWidget {
+  const SigninPage({super.key});
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<SigninPage> createState() => _SigninPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  final nameController = TextEditingController();
+class _SigninPageState extends State<SigninPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     // Form validation
@@ -45,16 +36,11 @@ class _SignupPageState extends State<SignupPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Sign Up",
+                "Sign In",
                 style: TextStyle(fontSize: 42, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 28),
-              TextFieldInput(
-                placeholder: "Full Name",
-                controller: nameController,
-              ),
-              const SizedBox(height: 16),
               TextFieldInput(placeholder: "Email", controller: emailController),
               const SizedBox(height: 16),
               TextFieldInput(
@@ -63,15 +49,15 @@ class _SignupPageState extends State<SignupPage> {
                 isPassword: true,
               ),
               const SizedBox(height: 16),
-              AuthButton(title: "Create Account", onCallback: () {}),
+              AuthButton(title: "Continue", onCallback: () {}),
               const SizedBox(height: 20),
               RichText(
                 text: TextSpan(
-                  text: "Already have an account? ",
+                  text: "Don't have an account? ",
                   style: Theme.of(context).textTheme.titleMedium,
                   children: [
                     TextSpan(
-                      text: "Sign In",
+                      text: "Sign Up",
                       style: TextStyle(color: Pallete.gradient1),
                     ),
                   ],
